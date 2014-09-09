@@ -1,0 +1,221 @@
+;****************************************************************
+; 
+; Ryan M Davis
+; HOT - Zero Quantum - Single Quantum - RARE accelleration
+;
+;****************************************************************
+;
+; d0 - TR padding
+; d8 - CONFIG_amplifier_enable
+
+#include <MRI.include>
+#include <RMD_hot.subr>
+define delay dur1
+"dur1=d1-de"
+
+define delay deosc = { $DEOSC }
+"deosc = 1.0E-6*abs(deosc)"
+
+define loopcounter lds={$DS}
+preset off
+define loopcounter pulsecycle
+define loopcounter nex_count
+define loopcounter na={$NA}
+define loopcounter rfcnum
+"rfcnum=0"
+
+
+;define list penc = phase_enc_vector
+lgrad phase_enc_vector = L[0] 
+zgrad phase_enc_vector
+
+lgrad phase_enc_vector2 = L[0] 
+zgrad phase_enc_vector2
+
+INIT_DEVICES
+
+if(AQ_mod == qdig) 
+{
+         fq1b transmit          ;disable fq1b receive
+}
+        5u	rpp0
+
+"vdidx = 0"
+"pulsecycle = 1"
+"nex_count = 0"
+
+;----------------------------------start of the main loop ----------
+;-----------help the magnetization reach equilibrium before experiment begins-----------
+
+250u fq1:f1
+d8	gatepulse 1
+(p0:sp0 ph1):f1
+d8
+d0
+if (meas_rec_baseline_OnOff == On)
+{
+	baseline_na,
+	baseline,
+		2m 
+		subr acq_window(ph5,ph0)
+		2m 
+	lo to baseline times NI
+	2m
+	lo to baseline_na times NA
+	5u
+}
+2.5u zgrad phase_enc_vector
+2.5u zgrad phase_enc_vector2
+
+
+start, 	
+	2.5u
+;----------------------------------preparation modules -------------
+
+	subr pulsecycle()
+	10u ;fq1:f1
+ 	d8	gatepulse 1
+	(p0:sp0 ph1):f1
+	d8 
+	d4 grad{(0)|(0)|(t0)}
+	d12 
+	d4 groff
+	d20 
+	10u ;fq1:f1
+	d8	gatepulse 1
+	(p1:sp1 ph2):f1
+	d8
+	vd
+	d4 grad{(0)|(0)|(t1)}
+	d12 
+	d4 groff ;fq1:f1
+	d26
+	d8	gatepulse 1 
+	(p2:sp2 ph0):f1
+	d4
+	d4 grad{(0)|(0)|(t2)}
+	d29
+	d4 groff
+	d43
+;	subr refocus_slice(ph3)
+	"rfcnum=0"
+	subr refocus_sliceN(ph3) 
+	d37
+	subr setPEpos(na)   
+	rare,
+		;spatial encoding
+		subr spat_encode_ZQSQ(ph5,ph0,ph8,ph0) ;ph4 is +y which is the physical direction of the SQC magnetization
+		subr incPEifOneImg(10u) 
+		d50
+
+		;refocusing
+		if (MSE_slice_sel_mode == Yes)
+		{
+		subr refocus_sliceN(ph2) 
+		}
+		else
+		{
+		subr refocusN(ph2) 
+		}
+		d50
+
+		;spatial encoding
+		subr spat_encode_SQZQ(ph9,ph10,ph5,ph0) 
+		subr incPEifOneImg(10u) 
+		d50
+
+		;refocusing
+		if (MSE_slice_sel_mode == Yes)
+		{
+		subr refocus_sliceN(ph2) 
+		}
+		else
+		{
+		subr refocusN(ph2) 
+		}
+		d50
+	lo to rare times half_num_echoes
+	d0
+	"lds = lds - 1"		; this makes
+	if "lds>=0" 
+	{
+		;2.5u ipp1
+		;2.5u ipp6
+		goto start	; dummy scans 
+	}
+	1m 	;ipp0
+	1m	
+	if (PulseCycleOnOff == On)
+	{
+	2.5u ;ipp3
+	}
+	if (PhaseCycleOnOff == On)
+	{
+	2.5u ipp1
+	2.5u ipp2
+	2.5u ipp3 ;needs to repeat from start after every excitation
+	2.5u ipp4 ;ditto
+	2.5u ipp5
+	2.5u ipp6
+	2.5u ipp8
+	2.5u ipp9
+	2.5u ipp11
+	}
+
+
+
+lo to start times NA
+	"nex_count = 0"
+	if (RARE_mode == N_images)
+	{
+		2.5u igrad phase_enc_vector
+		2.5u igrad phase_enc_vector2
+	}
+lo to start times phase_mat_loop_size
+        2.5u ivd	;rpp0
+	2.5u rpp1
+	2.5u rpp2
+	2.5u rpp3
+	2.5u rpp4
+	2.5u rpp5
+	2.5u rpp6
+	2.5u rpp8
+	2.5u rpp9
+	2.5u rpp11
+
+lo to start times tau_inc
+lo to start times exp_reps
+SETUP_GOTO(start)
+
+exit
+
+;Note for some reason when I change the excitation phase by 90 degrees the fid changes by 180 degrees
+
+ph0 = 0
+ph1 = 0 2 1 3 	;exc pulse
+ph2 = 1 1 1 1	;refocus
+;for the refocusing pulses need to keep them 180 degrees out of phase with excitation   do the phase cycling of CPMG by alternating phase passed to subr
+ph3 = 1 1 1 1	;refocus plus 180 degrees
+ph4 = 1	3 2 0	;sqc receiver phase
+ph5 = 0 0 2 2	;iZQC receiver phase odd echoes
+ph6 = 2 2 2 2	;iZQC receiver phase even echoes
+ph7 = 2
+;ph8 = 3 1 0 2	;SQC receiver
+ph8 = 0 2 1 3	;SQC receiver
+ph9 = 0 2 3 1
+ph10 = 0 	;SQC reference
+ph11 = 1 3 2 0  ;exc plus 90 degrees
+
+;ph0 = 0
+;ph1 = 0 2 1 3 	;exc pulse
+;ph2 = 1 3 2 0	;refocus
+;for the refocusing pulses need to keep them 180 degrees out of phase with excitation   do the phase cycling of CPMG by alternating phase passed to ;subr
+;ph3 = 3 1 0 2	;refocus plus 180 degrees
+;ph4 = 1	3 2 0	;sqc receiver phase
+;ph5 = 0 0 2 2	;iZQC receiver phase odd echoes
+;ph6 = 2 2 2 2	;iZQC receiver phase even echoes
+;ph7 = 2
+;ph8 = 0 2 1 3	;SQC receiver
+;ph9 = 0 2 3 1
+;ph10 = 0 2 0 2 	;SQC reference
+;ph11 = 2

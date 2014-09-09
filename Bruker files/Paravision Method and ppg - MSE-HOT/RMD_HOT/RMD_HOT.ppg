@@ -1,0 +1,63 @@
+;****************************************************************
+;
+; Copyright (c) 2002 - 2003
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+; 
+; SINGLEPULSE - non-selective spectroscopy (pulse + acquire)
+;
+;****************************************************************
+;
+; d0 - TR padding
+; d8 - CONFIG_amplifier_enable
+
+#include <MRI.include>
+define delay dur1
+"dur1=d1-de"
+define loopcounter lds={$DS}
+preset off
+
+INIT_DEVICES
+
+if(AQ_mod == qdig)
+{
+         fq1b transmit          ;disable fq1b receive
+}
+        5u	rpp0
+
+
+;----------------------------------start of the main loop ----------
+start, 	10u 
+
+;----------------------------------preparation modules -------------
+	d0      
+ 	d8	gatepulse 1
+	(p0:sp0 ph0):f1
+	dur1
+        ADC_INIT(ph0, ph1)  
+        aqq	ADC_START
+        5m
+        10u     ADC_END
+	"lds = lds - 1"		; this makes
+	if "lds>=0" goto start	; dummy scans 
+	1m	ipp0
+lo to start times NA
+        2.5u	rpp0
+lo to start times NR
+SETUP_GOTO(start)
+
+exit
+
+ph0 = 0 2 1 3
+ph1 = 0 
+
+
+
+	
+
+
+
+
+
