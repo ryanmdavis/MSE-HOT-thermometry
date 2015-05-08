@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file was downloaded from:
+%       https://github.com/ryanmdavis/MSE-HOT-thermometry
+%
+% Ryan M Davis.             rmd12@duke.edu                       05/08/2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%end%header
+
+
 function varargout = reconstructHOT2DSLI(raw_data_folder,varargin)
 
 invar = struct('recon_mat_size',[]);

@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file was downloaded from:
+%       https://github.com/ryanmdavis/MSE-HOT-thermometry
+%
+% Ryan M Davis.             rmd12@duke.edu                       05/08/2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%end%header
+
+
 %% fit the signal vs time curves
 % mse2_S_vs_t_curve;
 s_data=mean(s_all,2);

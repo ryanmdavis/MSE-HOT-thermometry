@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file was downloaded from:
+%       https://github.com/ryanmdavis/MSE-HOT-thermometry
+%
+% Ryan M Davis.             rmd12@duke.edu                       05/08/2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%end%header
+
+
 % reconstructs a Bruker RARE experiment
 
 function image = reconstructRAREMultiSlice3(raw_data_folder)

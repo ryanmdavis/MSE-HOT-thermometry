@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file was downloaded from:
+%       https://github.com/ryanmdavis/MSE-HOT-thermometry
+%
+% Ryan M Davis.             rmd12@duke.edu                       05/08/2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%end%header
+
+
 %make sure that this is not accessing the backup version of getRoisFromUser
 %Changes: -move operators to Roi class
 %           -allow user to spec what type of input (logical mask, point and

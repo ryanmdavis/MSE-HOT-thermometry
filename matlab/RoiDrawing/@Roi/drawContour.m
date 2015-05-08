@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file was downloaded from:
+%       https://github.com/ryanmdavis/MSE-HOT-thermometry
+%
+% Ryan M Davis.             rmd12@duke.edu                       05/08/2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%end%header
+
+
 function drawContour(obj,varargin)
     invar = struct('axes_h',gca,'width',1,'color',[],'style','-','f_h',gcf,'contour_num',1,'shift',[0 0],'scale',1);
     argin = varargin;

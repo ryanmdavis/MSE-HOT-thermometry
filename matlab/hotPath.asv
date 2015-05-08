@@ -10,13 +10,11 @@
 % HOT data.
 function path=hotPath(type)
 
-% find the location of the parent directory
 file_loc=mfilename('fullpath');
 repo_name='\MSE-HOT-thermometry\';
-parent_dir_end=strfind(file_loc,repo_name)+size(repo_name,2)-1;
-parent_dir=file_loc(1:parent_dir_end);
-
-% return the full directory based on what the user is looking for
+parent_dir_end=strfind(file_loc,repo_name)+size(repo_name,2);
+file_loc(1:parent_dir_end);
+parent_dir='C:\Users\Ryan2\Documents\My manuscripts and conference abstracts\warren lab manuscripts\Multi-echo HOT encoding\MSE-HOT-thermometry\';
 if ~strcmp(parent_dir(end),'\'), parent_dir=strcat(parent_dir,'\'); end
 switch type
     case 'images'
