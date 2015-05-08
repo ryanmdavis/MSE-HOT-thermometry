@@ -28,5 +28,5 @@ switch type
     case 'sim'
         path=strcat(parent_dir,'simulation results\');
     otherwise
-        error('path must be either "images", "luxtron", "options", "sim" or "calibration"');
+        error('path must be either "images", "luxtron", "options", "roi", "sim" or "calibration"');
 end 

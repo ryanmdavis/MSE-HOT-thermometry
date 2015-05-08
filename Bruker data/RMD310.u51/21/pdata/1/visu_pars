@@ -1,0 +1,124 @@
+##TITLE=Parameter List
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=ryan
+$$ Mon Feb  9 20:16:22 2015 EST (UT-5h)  ryan
+$$ /opt/PV5.1/data/ryan/nmr/RMD310.u51/21/pdata/1/visu_pars
+##$VisuVersion=1
+##$VisuUid=( 65 )
+<2.16.756.5.5.100.278412266.8243.1423530982.104>
+##$VisuCreator=( 65 )
+<ParaVision>
+##$VisuCreatorVersion=( 65 )
+<5.1>
+##$VisuCreationDate=( 21 )
+<20:00:08  9 Feb 2015>
+$$ @vis= VisuVersion VisuUid VisuCreator VisuCreatorVersion VisuCreationDate
+##$VisuCoreFrameCount=64
+##$VisuCoreDim=1
+##$VisuCoreSize=( 1 )
+32
+##$VisuCoreDimDesc=( 1 )
+spectroscopic
+$$ @vis= VisuInstance VisuCoreFrameCount VisuCoreDim VisuCoreSize
+##$VisuCoreExtent=( 1 )
+73.2538668930352
+##$VisuCoreUnits=( 1, 65 )
+<ppm>
+##$VisuCoreDataMin=( 64 )
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+##$VisuCoreDataMax=( 64 )
+56 6231 5073 54 52 5390 4267 46 64 6347 5503 68 71 5804 4783 45 77 8386 6805 
+71 197 20740 16766 156 230 22356 18027 175 296 29285 24068 215 289 32766 
+23824 220 229 23939 17864 163 194 22224 16128 131 99 8515 6842 73 59 5945 
+4897 52 73 7002 5072 60 58 5741 4376 55 60 6106 4608 31
+$$ @vis= VisuCoreDimDesc VisuCoreExtent VisuCoreUnits VisuCoreDataMin
+##$VisuCoreDataOffs=( 64 )
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+##$VisuCoreDataSlope=( 64 )
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673 
+22.6294756016673 22.6294756016673 22.6294756016673 22.6294756016673
+##$VisuCoreFrameType=MAGNITUDE_IMAGE
+$$ @vis= VisuCoreDataMax VisuCoreDataOffs VisuCoreDataSlope VisuCoreFrameType
+##$VisuCoreWordType=_16BIT_SGN_INT
+##$VisuCoreByteOrder=littleEndian
+##$VisuFGOrderDescDim=1
+$$ @vis= VisuCore VisuCoreWordType VisuCoreByteOrder VisuPixel
+##$VisuFGOrderDesc=( 1 )
+(64, <FG_CYCLE>, <>, 0, 0)
+##$VisuSubjectName=( 65 )
+<RMD310>
+##$VisuSubjectId=( 65 )
+<RMD310>
+$$ @vis= VisuFGOrderDescDim VisuFGOrderDesc VisuFrameOrderDesc VisuSubjectName
+##$VisuSubjectBirthDate=( 9 )
+<>
+##$VisuSubjectSex=FEMALE
+##$VisuSubjectComment=( 2048 )
+<>
+$$ @vis= VisuSubjectId VisuSubjectBirthDate VisuSubjectSex VisuSubjectComment
+##$VisuStudyUid=( 65 )
+<2.16.756.5.5.100.278412266.22908.1423182527.797>
+##$VisuStudyDate=( 21 )
+<19:28:47  5 Feb 2015>
+##$VisuStudyId=( 65 )
+<RMD310>
+##$VisuStudyNumber=1
+##$VisuSubjectWeight=5
+$$ @vis= VisuSubject VisuStudyUid VisuStudyDate VisuStudyId VisuStudyNumber
+##$VisuStudyReferringPhysician=( 65 )
+<>
+##$VisuStudyDescription=( 65 )
+<>
+$$ @vis= VisuSubjectWeight VisuStudyReferringPhysician VisuStudyDescription
+##$VisuSeriesNumber=1376257
+##$VisuSubjectPosition=Head_Supine
+##$VisuSeriesTypeId=( 65 )
+<ACQ_USER_PVM>
+$$ @vis= VisuStudy VisuSeriesNumber VisuSubjectPosition VisuSeriesTypeId
+##$VisuAcqSoftwareVersion=( 65 )
+<5.1>
+##$VisuInstitution=( 65 )
+<Duke University Biospec 70/20>
+##$VisuStation=( 65 )
+<spect>
+$$ @vis= VisuSeries VisuAcqSoftwareVersion VisuInstitution VisuStation
+##$VisuAcqDate=( 21 )
+<20:00:08  9 Feb 2015>
+##$VisuAcqEchoTrainLength=1
+##$VisuAcqSequenceName=( 40 )
+<rMD_HOT (pvm)>
+##$VisuAcqNumberOfAverages=32
+$$ @vis= VisuEquipment VisuAcqDate VisuAcqEchoTrainLength VisuAcqSequenceName
+##$VisuAcqImagingFrequency=300.3390938
+##$VisuAcqImagedNucleus=( 8 )
+<1H>
+##$VisuAcqRepetitionTime=( 1 )
+1880
+$$ @vis= VisuAcqNumberOfAverages VisuAcqImagingFrequency VisuAcqImagedNucleus
+##$VisuAcqFlipAngle=90
+##$VisuAcqEchoTime=( 1 )
+0
+##$VisuAcquisitionProtocol=( 65 )
+<RMD_HOT_RBM_RARE_ZQSQ2>
+$$ @vis= VisuAcqRepetitionTime VisuAcqFlipAngle VisuAcqEchoTime
+##$VisuAcqScanTime=962560
+$$ @vis= VisuAcquisitionProtocol VisuAcqScanTime VisuAcquisition Visu
+##END=
