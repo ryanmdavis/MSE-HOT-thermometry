@@ -1,0 +1,972 @@
+# 1 "/opt/PV5.1/exp/stan/nmr/lists/pp/RMD_HOT_2D_RARE_ZQSQ3.ppg"
+;****************************************************************
+;
+; Ryan M Davis
+; HOT - Zero Quantum - Single Quantum - RARE accelleration
+;
+;****************************************************************
+;
+; d0 - TR padding
+; d8 - CONFIG_amplifier_enable
+
+# 1 "/opt/PV5.1/exp/stan/nmr/lists/pp/MRI.include" 1
+;****************************************************************
+;
+; $Source: /pv/CvsTree/pv/gen/src/prg/methManag/PPG/MRI.include,v $
+;
+; Copyright (c) 2006
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+;
+;;****************************************************************
+;MRI.include
+
+# 1 "/opt/PV5.1/exp/stan/nmr/lists/pp/Avance.incl" 1
+;Avance2.incl
+;   for 1
+;
+;avance-version (07/01/22)
+;
+;$CLASS=HighRes Incl
+;$COMMENT=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;$Id: Avance2.incl,v 1.14.2.6 2008/04/03 08:54:39 mah Exp $
+# 14 "/opt/PV5.1/exp/stan/nmr/lists/pp/MRI.include" 2
+
+
+define delay aqq
+define delay deparx
+define delay derxadc
+define delay rdepa
+
+"aqq=dw*td"
+"rdepa=de-depa"
+"deparx=depa-derx"
+"derxadc=derx-deadc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 86 "/opt/PV5.1/exp/stan/nmr/lists/pp/MRI.include"
+
+
+
+
+
+
+# 11 "/opt/PV5.1/exp/stan/nmr/lists/pp/RMD_HOT_2D_RARE_ZQSQ3.ppg" 2
+
+# 1 "/opt/PV5.1/exp/stan/nmr/lists/pp/RMD_hot.subr" 1
+;***************************************************
+;	Ryan M Davis
+;	Subroutines for HOT
+;**************************************************
+
+define delay d3adj
+"d3adj = d3 - d53"
+define delay d_ae ;on 07182014 the original delay depra started giving an error as not long enough
+"d_ae = 10u"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; for this subrouting cal_scan_onoff does not turn off read gradient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;acquire a zero quantum window first then a single quantum window
+
+
+
+
+
+
+
+
+
+
+
+;acquire a single quantum window first then a zero quantum window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 12 "/opt/PV5.1/exp/stan/nmr/lists/pp/RMD_HOT_2D_RARE_ZQSQ3.ppg" 2
+
+define delay dur1
+"dur1=d1-de"
+define delay deosc = { $DEOSC }
+"deosc = 1.0E-6*abs(deosc)"
+
+define loopcounter lds={$DS}
+preset off
+define loopcounter pulsecycle
+
+
+;define list penc = phase_enc_vector
+lgrad phase_enc_vector = L[0] 
+zgrad phase_enc_vector
+
+lgrad phase_enc_vector2 = L[0] 
+zgrad phase_enc_vector2
+
+define loopcounter rfcnum
+
+fq1b receive				     	     \n if (CONFIG_instrument_type != Avance_I)           \n {                                                 \n dccorr                                         \n }                         \n if (CONFIG_preemp_type == GREAT_60)               \n {                                                 \n if (CONFIG_instrument_type != Avance_III)      \n {                                              \n 500m setnmr0|34|33|32                          \n }                                              \n else                                           \n {                                              \n 200u setnmr0|34|33|32                          \n }                                              \n }                                                 \n if (CONFIG_preemp_type == DPP_with_SW_Blanking)   \n {                                                 \n 10u ctrlgrad 0                                 \n 10u grad{(0)|(0)|(0) }			     \n 200u setnmr0|34|33|32                          \n }
+
+if(AQ_mod == qdig)
+{
+         fq1b transmit          ;disable fq1b receive
+}
+        5u	rpp0
+
+"vdidx = 0"
+"pulsecycle = 1"
+;----------------------------------start of the main loop ----------
+;-----------help the magnetization reach equilibrium before experiment begins-----------
+250u fq1:f1
+d8	gatepulse 1
+(p0:sp0 ph1):f1
+d8
+d0
+if (meas_rec_baseline_OnOff == On)
+{
+	baseline_na,
+	baseline,
+		2m
+;EXEC_begin acq_window line 611 (54) acq_window(phase ph6, phase ph6)
+ 
+	rdepa						 \n deparx     adc ph6 setrtp1|2 syrec	          \n derxadc     ph6:r setrtp1|1 			  \n deadc      setrtp1|0|8 ;use ph6,ph0 for RBM
+	aqq	cpdngs30:f1
+	10u     eoscnp
+ 
+;EXEC_end   acq_window line 611 (54) acq_window(phase ph6, phase ph6)
+		2m igrad phase_enc_vector
+	lo to baseline times NI
+	2m
+	lo to baseline_na times NA
+	5u zgrad phase_enc_vector
+}
+start, 	
+	2.5u rpp2
+;----------------------------------preparation modules -------------
+
+	if (PulseCycleOnOff == On)
+	{
+	if "pulsecycle == 1"
+	{
+	d4	gatepulse 1
+	(p1:sp1 ph0):f1
+	d4
+	"pulsecycle = 2"
+	}
+	else
+	{
+	"pulsecycle = 1"
+	}
+	 }
+	10u ;fq1:f1
+ 	d8	gatepulse 1
+	(p0:sp0 ph1):f1
+	d8 
+	d4 grad{(0)|(0)|(t0)}
+	d12 
+	d4 groff
+	d20
+	10u ;fq1:f1
+	vd
+	d8	gatepulse 1
+	(p1:sp1 ph2):f1
+	d8
+	d4 grad{(0)|(0)|(t1)}
+	d12 
+	d4 groff ;fq1:f1
+	d26
+	d8	gatepulse 1
+	(p2:sp2 ph0):f1
+	d4
+	d4 grad{(0)|(0)|(t2)}
+	d29
+	d4 groff
+	d43
+	"rfcnum=0"
+;EXEC_begin first_refocus_slice line 661 (104) first_refocus_slice(phase ph3)
+ 
+	d4 grad{(t13)|(0)|(0)}
+	d5
+	d4 grad{(0)|(0)|(t4)}
+	d3	gatepulse 1
+	(p3:sp3 ph3):f1
+	d3adj
+	d4 grad{(t13)|(0)|(0)}
+	d5
+	d4 groff
+ 
+;EXEC_end   first_refocus_slice line 661 (104) first_refocus_slice(phase ph3)
+	d54
+;EXEC_begin spat_encode2 line 663 (106) spat_encode2(phase ph8, phase ph10)
+ 
+	d4 grad{(t10)|phase_enc_vector2(100)|(0)}
+	d34
+	d4 groff
+	d4 grad{(t11)|(0)|(0)}
+	rdepa						 \n deparx     adc ph8 setrtp1|2 syrec	          \n derxadc     ph10:r setrtp1|1 			  \n deadc      setrtp1|0|8
+	aqq	cpdngs30:f1
+	;10u eoscnp
+	;deparx
+	;derxadc
+	d4 groff
+	d4 grad{(t12)|phase_enc_vector2(-100)|(0)}
+	d34 eoscnp
+	d4 groff
+ 
+;EXEC_end   spat_encode2 line 663 (106) spat_encode2(phase ph8, phase ph10)
+	d4 grad{(0)|(0)|(t3)}
+	d12
+	d4 groff
+	d55
+	"rfcnum=0"
+	if (num_echoes >= 1)
+	{
+	rare_ZQ,
+;EXEC_begin spat_encode line 672 (115) spat_encode(phase ph5, phase ph6)
+ 
+	d4 grad{(t7)|phase_enc_vector(100)|(0)}
+	d34
+	d4 groff
+	d4 grad{(t8)|(0)|(0)}
+	rdepa						 \n deparx     adc ph5 setrtp1|2 syrec	          \n derxadc     ph6:r setrtp1|1 			  \n deadc      setrtp1|0|8
+	aqq	cpdngs30:f1
+	;rdepa
+	;10u eoscnp
+	;deparx
+	;derxadc
+	d4 groff
+	d4 grad{(t9)|phase_enc_vector(-100)|(0)}
+	d34 eoscnp
+	d4 groff
+ 
+;EXEC_end   spat_encode line 672 (115) spat_encode(phase ph5, phase ph6)
+		if (RARE_mode == one_image)
+		{
+			d44 igrad phase_enc_vector
+		}
+		else
+		{
+			d44
+		}
+
+		;refocusing
+		if (MSE_slice_sel_mode == Yes)
+		{
+;EXEC_begin refocus_sliceN line 685 (128) refocus_sliceN(phase ph2)
+ 
+	if "rfcnum == 0"
+	{
+;EXEC_begin refocus_slice line 401 (0) refocus_slice(phase ph2)
+ 
+	d4 grad{(0)|(0)|(t5)}
+	d5
+	d4 grad{(0)|(0)|(t4)}
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(0)|(0)|(t5)}
+	d5
+	d4 groff
+ 
+;EXEC_end   refocus_slice line 401 (0) refocus_slice(phase ph2)
+	}
+	else
+	{
+		if "rfcnum == 1"
+		{
+;EXEC_begin refocus_slice2 line 407 (0) refocus_slice2(phase ph2)
+ 
+	d4 grad{(0)|(0)|(t13)}
+	d5 
+	d4 grad{(0)|(0)|(t4)}
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(0)|(0)|(t13)}
+	d5 
+	d4 groff 
+ 
+;EXEC_end   refocus_slice2 line 407 (0) refocus_slice2(phase ph2)
+		}
+		else
+		{
+			if "rfcnum == 2"
+			{
+;EXEC_begin refocus_slice3 line 413 (0) refocus_slice3(phase ph2)
+ 
+	d4 grad{(t5)|(0)|(0)}
+	d5 
+	d4 grad{(0)|(0)|(t4)}
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(t5)|(0)|(0)}
+	d5 
+	d4 groff 
+ 
+;EXEC_end   refocus_slice3 line 413 (0) refocus_slice3(phase ph2)
+			}
+			else
+			{
+;EXEC_begin refocus_slice4 line 417 (0) refocus_slice4(phase ph2)
+ 
+	d4 grad{(t13)|(0)|(0)}
+	d5 
+	d4 grad{(0)|(0)|(t4)}
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(t13)|(0)|(0)}
+	d5 
+	d4 groff 
+ 
+;EXEC_end   refocus_slice4 line 417 (0) refocus_slice4(phase ph2)
+				"rfcnum = -1"
+			}
+		}	
+	}
+	"rfcnum = rfcnum + 1"
+ 
+;EXEC_end   refocus_sliceN line 685 (128) refocus_sliceN(phase ph2)
+		}
+		else
+		{
+;EXEC_begin refocusN line 689 (132) refocusN(phase ph2)
+ 
+	if "rfcnum == 0"
+	{
+;EXEC_begin refocus line 482 (0) refocus(phase ph2)
+ 
+	d4 grad{(0)|(0)|(t5)}
+	d5 
+	d4 groff
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(0)|(0)|(t5)}
+	d5 
+	d4 groff 
+ 
+;EXEC_end   refocus line 482 (0) refocus(phase ph2)
+	}
+	else
+	{
+		if "rfcnum == 1"
+		{
+;EXEC_begin refocus2 line 488 (0) refocus2(phase ph2)
+ 
+	d4 grad{(0)|(0)|(t13)}
+	d5 
+	d4 groff
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(0)|(0)|(t13)}
+	d5 
+	d4 groff 
+ 
+;EXEC_end   refocus2 line 488 (0) refocus2(phase ph2)
+		}
+		else
+		{
+			if "rfcnum == 2"
+			{
+;EXEC_begin refocus3 line 494 (0) refocus3(phase ph2)
+ 
+	d4 grad{(t5)|(0)|(0)}
+	d5 
+	d4 groff
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(t5)|(0)|(0)}
+	d5 
+	d4 groff 
+ 
+;EXEC_end   refocus3 line 494 (0) refocus3(phase ph2)
+			}
+			else
+			{
+;EXEC_begin refocus4 line 498 (0) refocus4(phase ph2)
+ 
+	d4 grad{(t13)|(0)|(0)}
+	d5 
+	d4 groff
+	d3	gatepulse 1
+	(p4:sp4 ph2):f1
+	d3adj
+	d4 grad{(t13)|(0)|(0)}
+	d5 
+	d4 groff 
+ 
+;EXEC_end   refocus4 line 498 (0) refocus4(phase ph2)
+				"rfcnum = -1"
+			}
+		}	
+	}
+	"rfcnum = rfcnum + 1"
+ 
+;EXEC_end   refocusN line 689 (132) refocusN(phase ph2)
+		}
+
+		d44
+		d2
+		d2
+	lo to rare_ZQ times num_echoes
+	}
+
+	d0
+	"lds = lds - 1"		; this makes
+	if "lds>=0"
+	{
+		2.5u ipp1
+		2.5u ipp6
+		goto start	; dummy scans 
+	}
+	1m 	;ipp0
+	1m	
+	if (PulseCycleOnOff == On)
+	{
+	2.5u ;ipp3
+	}
+	if (PhaseCycleOnOff == On)
+	{
+	2.5u ipp1
+	2.5u ipp2
+	2.5u ipp3 ;needs to repeat from start after every excitation
+	2.5u ipp4 ;ditto
+	2.5u ipp5
+	2.5u ipp6
+	2.5u ipp8
+	2.5u ipp9
+	2.5u ipp11
+	}
+
+
+
+lo to start times NA
+	if (RARE_mode == N_images)
+	{
+		2.5u igrad phase_enc_vector
+		2.5u igrad phase_enc_vector2
+	}
+lo to start times phase_mat_size
+        2.5u ivd	;rpp0
+	2.5u rpp1
+	2.5u rpp2
+	2.5u rpp3
+	2.5u rpp4
+	2.5u rpp5
+	2.5u rpp6
+	2.5u rpp8
+	2.5u rpp9
+	2.5u rpp11
+lo to start times tau_inc
+lo to start times exp_reps
+if (ACQ_scan_type != Scan_Experiment) \n{ \n goto start \n}
+
+exit
+
+ph0 = 0
+ph1 = 0 2 1 3 	;exc pulse
+ph2 = 1 1 1 1	;refocus
+;for the refocusing pulses need to keep them 180 degrees out of phase with excitation   do the phase cycling of CPMG by alternating phase passed to subr
+ph3 = 1 1 1 1	;refocus plus 180 degrees
+ph4 = 1	3 2 0	;sqc receiver phase
+ph5 = 0 0 2 2	;iZQC receiver phase odd echoes
+ph6 = 0 0 2 2	;iZQC receiver phase even echoes
+ph7 = 2
+ph8 = 3 1 0 2	;SQC receiver
+ph9 = 0 2 3 1
+ph10 = 0 2	;SQC reference
+ph11 = 1 3 2 0  ;exc plus 90 degrees
+
+
+;note when changing from cream to RBM change ph1 ph6 and the first window phase
+	
+
+
+
+
+
