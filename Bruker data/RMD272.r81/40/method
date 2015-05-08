@@ -1,0 +1,193 @@
+##TITLE=Parameter List
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=ryan
+$$ Thu Aug  7 21:52:27 2014 EDT (UT-4h)  ryan
+$$ /opt/PV5.1/data/ryan/nmr/RMD272.r81/40/method
+##$Method=rMD_HOT
+##$Exp_type=HOT_2D_RARE_ZQSQ2
+##$read_mat_size=32
+##$phase_mat_size=16
+##$read_FOV=35
+##$phase_FOV=35
+##$imaging_bandwidth=22001
+$$ @vis= Method Exp_type read_mat_size phase_mat_size read_FOV phase_FOV
+##$k_spoil=5
+##$dephase_grad_dur=0.8
+##$mock_spat_enc_onoff=On
+##$dur_mock_real=10
+##$digfiltcompOnOff=On
+$$ @vis= imaging_bandwidth k_spoil dephase_grad_dur mock_spat_enc_onoff
+##$meas_rec_baseline_OnOff=Off
+##$RMD_ramp_time_adjust=0
+##$RMD_grad_stabilization_time_ms=0.4
+$$ @vis= digfiltcompOnOff meas_rec_baseline_OnOff RMD_ramp_time_adjust
+##$te_rfc_adjust_ms=0
+##$read_rephase_adjust=0
+$$ @vis= RMD_grad_stabilization_time_ms te_rfc_adjust_ms read_rephase_adjust
+##$time_bw_rfc_pulses=11.5994793418481
+##$min_time_bw_rfc_pulses=11.5994793418481
+##$num_echoes=2
+##$num_echoes_SQ=2
+##$RARE_mode=N_images
+$$ @vis= SpatEnc time_bw_rfc_pulses min_time_bw_rfc_pulses num_echoes
+##$RARE_encoding_scheme=standard
+##$cal_scan_onoff=Off
+##$MSE_slice_sel_mode=No
+##$ap_offset_mm=0
+$$ @vis= RARE_mode RARE_encoding_scheme cal_scan_onoff MSE_slice_sel_mode RARE
+##$rl_offset_mm=0
+##$hf_offset_mm=0
+##$ap_thickness=4
+##$rl_thickness=4
+##$hf_thickness=4
+$$ @vis= ap_offset_mm rl_offset_mm hf_offset_mm ap_thickness rl_thickness
+##$CorrelationDistance=100
+##$CoherenceOrder=0
+##$PhaseCycleOnOff=On
+##$PulseCycleOnOff=Off
+##$MQFilterGradientDuration=0.56
+$$ @vis= hf_thickness PRESS CorrelationDistance PulseCycleOnOff
+##$MQFilterGradientDuration2m=2
+##$t1=1.7
+##$tau=11
+##$tau_min=3.15
+##$tau_max=7.15
+$$ @vis= MQFilterGradientDuration MQFilterGradientDuration2m t1 tau_min
+##$tau_inc=1
+##$ACQ_vd_list=( 1 )
+1e-06
+##$spectral_bandwidth_f2=5000
+##$t2=7
+##$mm=-0.7
+##$nn=0.3
+##$I_freq=-150
+##$S_freq=1100
+##$exp_reps=5
+$$ @vis= tau_max tau_inc ACQ_vd_list mm nn I_freq S_freq iMQC_Parameters
+##$TE_ms=50
+##$PVM_SpecDimEnum=1D
+##$PVM_SpecAcquisitionTime=1.4544793418481
+##$PVM_SpecOffsetHz=0
+##$PVM_SpecOffsetppm=0
+##$PVM_SpecMatrix=( 1 )
+32
+##$PVM_SpecSWH=( 1 )
+22001
+$$ @vis= exp_reps TE_ms PVM_SpecDimEnum PVM_SpecAcquisitionTime PVM_SpecMatrix
+##$PVM_SpecSW=( 1 )
+73.2535112057034
+##$PVM_SpecDwellTime=( 1 )
+22.7262397163765
+##$PVM_SpecNomRes=( 1 )
+343.765625
+##$PVM_DigAutSet=No
+##$PVM_DigQuad=No
+##$PVM_DigFilter=Analog
+$$ @vis= PVM_SpecSWH PVM_SpecSW PVM_SpecDwellTime PVM_SpecNomRes PVM_DigAutSet
+##$PVM_DigRes=16
+##$PVM_DigDw=0.0454524794327531
+##$PVM_DigSw=22001
+##$PVM_DigNp=32
+##$PVM_DigShift=0
+##$PVM_DigGroupDel=0
+$$ @vis= PVM_DigFilter PVM_DigRes PVM_DigDw PVM_DigSw PVM_DigNp PVM_DigShift
+##$PVM_DigDur=1.4544793418481
+##$PVM_DigEndDelMin=0.0727262397163764
+##$PVM_DigEndDelOpt=0.0727262397163764
+$$ @vis= PVM_DigGroupDel PVM_DigDur PVM_DigEndDelMin PVM_DigEndDelOpt
+##$SliceThickness=13
+##$slice_offset_mm=0
+##$PVM_GeoMode=GeoMRS
+##$PVM_RepetitionTime=1880
+$$ @vis= DigitizerPars Spectroscopy SliceThickness slice_offset_mm
+##$PVM_NAverages=4
+##$PVM_ScanTimeStr=( 16 )
+<0h10m1s600ms>
+##$PVM_DeriveGains=No
+##$PVM_SliceBandWidthScale=0
+$$ @vis= PVM_RepetitionTime PVM_NAverages PVM_ScanTimeStr PVM_DeriveGains
+##$ExcPulseEnum=bp
+##$ExcPulse=(0.1, 12800, 90, 10.6340610285804, 100, 0, 100, LIB_EXCITATION, <
+bp.exc>, 1280, 1, 50, 0.0004, conventional)
+##$ExcPulseSelEnum=gauss
+##$ExcPulseSel=(3, 913.333333333333, 90, 32.6035913527896, 100, 0, 100, 
+LIB_EXCITATION, <gauss.exc>, 2740, 0.4181723, 50, 0.0256, conventional)
+$$ @vis= PVM_SliceBandWidthScale ExcPulseEnum ExcPulse ExcPulseSelEnum
+##$RefPulseEnum=hermite
+##$RefPulse=(0.8, 4275, 180, 7.75170962930112, 100, 0, 100, LIB_REFOCUS, <
+hermite.rfc>, 3420, 0.1794, 0, 0.1024, conventional)
+##$RefPulseSelEnum=gauss
+##$RefPulseSel=(2, 805, 180, 23.0611662583963, 100, 0, 100, LIB_REFOCUS, <
+gauss.rfc>, 1610, 0.4181723, 0, 0.0256, conventional)
+##$BIRPulseEnum=USER_PULSE
+$$ @vis= ExcPulseSel RefPulseEnum RefPulse RefPulseSelEnum RefPulseSel
+##$BIRPulse=(1, 25, 180, 4.11417618763459, 50, 0, 50, USER_PULSE, <
+slr_1_4_01_20>, 50, 0.09441386, 0, 0.0248, conventional)
+##$InvPulseSelEnum=USER_PULSE
+##$InvPulseSel=(0.0256, 976.5625, 0.01, 17.8837105236039, 50, 0, 50, 
+USER_PULSE, <gauss.exc>, 50, 0.001, 0, 0.0256, conventional)
+##$PVM_GradCalConst=17830.2
+$$ @vis= BIRPulseEnum BIRPulse InvPulseSelEnum InvPulseSel RF_Pulses
+##$PVM_Nucleus1Enum=1H
+##$PVM_Nucleus1=( 8 )
+<1H>
+##$PVM_RefAttMod1=AutoAdj
+##$PVM_RefAttCh1=30.6340610285804
+$$ @vis= PVM_GradCalConst PVM_Nucleus1Enum PVM_Nucleus1 PVM_RefAttMod1
+##$PVM_RefAttStat1=( 1024 )
+<Adj by AdjRefG (protocol ADJ_REFG)>
+##$PVM_Nucleus2Enum=1H
+##$PVM_Nucleus3Enum=1H
+##$PVM_Nucleus4Enum=1H
+##$PVM_Nucleus5Enum=1H
+##$PVM_Nucleus6Enum=1H
+##$PVM_Nucleus7Enum=1H
+##$PVM_Nucleus8Enum=1H
+##$Ndummy=0
+##$PVM_EncUseMultiRec=No
+$$ @vis= PVM_RefAttCh1 PVM_RefAttStat1 Nuclei Ndummy Preparation
+##$PVM_EncActReceivers=( 1 )
+On
+##$PVM_EncZfRead=1
+##$PVM_EncPpiAccel1=1
+##$PVM_EncPpiAccel2=1
+$$ @vis= PVM_EncUseMultiRec PVM_EncActReceivers PVM_EncZfRead PVM_EncPpiAccel1
+##$PVM_EncPpiRefLines1=0
+##$PVM_EncPpiRefLines2=0
+##$PVM_EncPftAccel1=1
+$$ @vis= PVM_EncPpiAccel2 PVM_EncPpiRefLines1 PVM_EncPpiRefLines2
+##$PVM_EncPftOverscans1=0
+##$PVM_EncPftAccel2=1
+##$PVM_EncPftOverscans2=0
+$$ @vis= PVM_EncPftAccel1 PVM_EncPftOverscans1 PVM_EncPftAccel2
+##$PVM_EncZfAccel1=1
+##$PVM_EncZfAccel2=1
+##$PVM_EncOrder1=LINEAR_ENC
+##$PVM_EncOrder2=LINEAR_ENC
+$$ @vis= PVM_EncPftOverscans2 PVM_EncZfAccel1 PVM_EncZfAccel2 PVM_EncOrder1
+##$PVM_EncStart1=-1
+##$PVM_EncStart2=-1
+##$PVM_EncMatrix=( 1 )
+49
+##$PVM_EncSteps1=( 1 )
+0
+##$PVM_EncSteps2=( 1 )
+0
+$$ @vis= PVM_EncOrder2 PVM_EncStart1 PVM_EncStart2 PVM_EncMatrix PVM_EncSteps1
+##$PVM_EncCentralStep1=1
+##$PVM_EncCentralStep2=1
+##$PVM_EncTotalAccel=1
+$$ @vis= PVM_EncSteps2 PVM_EncCentralStep1 PVM_EncCentralStep2
+##$PVM_EncNReceivers=1
+##$PVM_EncAvailReceivers=2
+##$PVM_EncChanScaling=( 1 )
+1
+$$ @vis= PVM_EncTotalAccel PVM_EncNReceivers PVM_EncAvailReceivers
+##$PVM_OperationMode=( 64 )
+<[1H] TX/RX Volume>
+##$DeadTime=0.14285714
+$$ @vis= PVM_EncChanScaling PVM_OperationMode Encoding_Output Encoding
+$$ @vis= DeadTime Sequence_Details MethodClass
+##END=

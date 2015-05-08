@@ -25,6 +25,8 @@ switch type
         path=strcat(parent_dir,'ROIs');
     case 'options'
         path=strcat(parent_dir,'recon options\HOTReconOptions.mat');
+    case 'sim'
+        path=strcat(parent_dir,'simulation results\');
     otherwise
-        error('path must be either "images", "luxtron", "options" or "calibration"');
+        error('path must be either "images", "luxtron", "options", "sim" or "calibration"');
 end 

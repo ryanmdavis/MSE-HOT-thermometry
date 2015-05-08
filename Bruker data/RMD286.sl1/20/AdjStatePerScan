@@ -1,0 +1,9 @@
+##TITLE=Parameter List
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=ryan
+$$ Tue Oct 21 13:22:34 2014 EDT (UT-4h)  ryan
+$$ /opt/PV5.1/data/ryan/nmr/RMD286.sl1/20/AdjStatePerScan
+##$AdjScanStateCompleted=No
+##END=

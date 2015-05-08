@@ -1,0 +1,116 @@
+##TITLE=Parameter List
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=ryan
+$$ Mon Oct 27 18:03:40 2014 EST (UT-5h)  ryan
+$$ /opt/PV5.1/data/ryan/nmr/RMD286.sl1/51/method
+##$Method=rMD_CPMG
+##$PVM_GeoMode=GeoMRS
+##$num_pulse_min=1
+##$num_pulse_max=12
+##$tTE=40
+##$min_tTE=38.04
+##$cal_CPMG_YesNo=No
+$$ @vis= Method num_pulse_min num_pulse_max tTE min_tTE cal_CPMG_YesNo
+##$min_power=22
+##$max_power=4
+##$num_power=1
+##$power_list=( 1 )
+6.5223003290878
+$$ @vis= CPMG_parameters min_power max_power num_power power_list
+##$min_offset=-700
+##$max_offset=700
+##$num_offset=1
+##$offset_list=( 1 )
+0
+$$ @vis= power_parameters min_offset max_offset num_offset offset_list
+##$SpoilerOnOff=Off
+##$PVM_PreemphasisSpecial=No
+##$PVM_PreemphasisFileEnum=default
+$$ @vis= offset_parameters SpoilerOnOff Spoiler PVM_PreemphasisSpecial
+##$PVM_RepetitionTime=20000
+##$PVM_NAverages=4
+##$PVM_NRepetitions=12
+##$PVM_ScanTimeStr=( 16 )
+<0h16m0s0ms>
+$$ @vis= Preemphasis PVM_RepetitionTime PVM_NAverages PVM_NRepetitions
+##$PVM_DeriveGains=Yes
+##$ExcPulseEnum=bp
+##$ExcPulse=(0.1, 12800, 90, 11.6277591170479, 100, 0, 100, LIB_EXCITATION, <
+bp.exc>, 1280, 1, 50, 0.0004, conventional)
+##$RefPulseEnum=USER_PULSE
+##$RefPulse=(1, 3420, 180, 6.5223003290878, 100, 0, 100, USER_PULSE, <
+comp_rfc_tycko>, 3420, 0.111111, 0, 0.0018, conventional)
+$$ @vis= PVM_ScanTimeStr PVM_DeriveGains ExcPulseEnum ExcPulse RefPulseEnum
+##$PVM_GradCalConst=17830.2
+##$PVM_Nucleus1Enum=1H
+##$PVM_Nucleus1=( 8 )
+<1H>
+##$PVM_RefAttMod1=AutoAdj
+$$ @vis= RefPulse RF_Pulses PVM_GradCalConst PVM_Nucleus1Enum PVM_Nucleus1
+##$PVM_RefAttCh1=31.6277591170479
+##$PVM_RefAttStat1=( 1024 )
+<Adj by AdjRefG (method spec)>
+##$PVM_Nucleus2Enum=1H
+##$PVM_Nucleus3Enum=1H
+##$PVM_Nucleus4Enum=1H
+##$PVM_Nucleus5Enum=1H
+##$PVM_Nucleus6Enum=1H
+##$PVM_Nucleus7Enum=1H
+##$PVM_Nucleus8Enum=1H
+##$PVM_SpecDimEnum=1D
+##$PVM_SpecAcquisitionTime=63.8976
+$$ @vis= PVM_RefAttMod1 PVM_RefAttCh1 PVM_RefAttStat1 Nuclei PVM_SpecDimEnum
+##$PVM_SpecOffsetHz=0
+##$PVM_SpecOffsetppm=0
+##$PVM_SpecMatrix=( 1 )
+512
+$$ @vis= PVM_SpecAcquisitionTime PVM_SpecOffsetHz PVM_SpecOffsetppm
+##$PVM_SpecSWH=( 1 )
+8012.82051282051
+##$PVM_SpecSW=( 1 )
+26.6792702127681
+##$PVM_SpecDwellTime=( 1 )
+62.4
+##$PVM_SpecNomRes=( 1 )
+7.82502003205128
+$$ @vis= PVM_SpecMatrix PVM_SpecSWH PVM_SpecSW PVM_SpecDwellTime
+##$PVM_DigAutSet=No
+##$PVM_DigQuad=No
+##$PVM_DigFilter=Analog
+##$PVM_DigRes=16
+##$PVM_DigDw=0.1248
+##$PVM_DigSw=8012.82051282051
+$$ @vis= PVM_SpecNomRes PVM_DigAutSet PVM_DigFilter PVM_DigRes PVM_DigDw
+##$PVM_DigNp=512
+##$PVM_DigShift=0
+##$PVM_DigGroupDel=0
+##$PVM_DigDur=63.8976
+##$PVM_DigEndDelMin=0.112399999999994
+$$ @vis= PVM_DigSw PVM_DigNp PVM_DigShift PVM_DigGroupDel PVM_DigDur
+##$PVM_DigEndDelOpt=0.112399999999994
+##$PVM_EncUseMultiRec=No
+$$ @vis= PVM_DigEndDelMin PVM_DigEndDelOpt DigitizerPars Spectroscopy
+##$PVM_EncActReceivers=( 1 )
+On
+##$PVM_EncMatrix=( 1 )
+512
+##$PVM_EncTotalAccel=1
+##$PVM_EncNReceivers=1
+##$PVM_EncAvailReceivers=2
+$$ @vis= PVM_EncUseMultiRec PVM_EncMatrix PVM_EncTotalAccel PVM_EncNReceivers
+##$PVM_EncChanScaling=( 1 )
+1
+##$PVM_OperationMode=( 64 )
+<[1H] TX/RX Volume>
+$$ @vis= PVM_EncAvailReceivers PVM_EncChanScaling PVM_OperationMode
+##$CpmgWeight=200
+##$Transmitter_power=1000
+##$Peak_power=55.9461192998609
+##$Mean_power=0.00288364239617773
+$$ @vis= Encoding_Output Encoding CpmgWeight Transmitter_power Peak_power
+##$Ndummy=0
+##$PVM_TriggerModule=Off
+$$ @vis= Mean_power RF_power Ndummy PVM_TriggerModule Preparation MethodClass
+##END=

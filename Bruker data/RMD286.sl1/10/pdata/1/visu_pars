@@ -1,0 +1,106 @@
+##TITLE=Parameter List
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=ryan
+$$ Tue Oct 21 12:47:36 2014 EDT (UT-4h)  ryan
+$$ /opt/PV5.1/data/ryan/nmr/RMD286.sl1/10/pdata/1/visu_pars
+##$VisuVersion=1
+##$VisuUid=( 65 )
+<2.16.756.5.5.100.278412266.16667.1413910056.36>
+##$VisuCreator=( 65 )
+<ParaVision>
+##$VisuCreatorVersion=( 65 )
+<5.1>
+##$VisuCreationDate=( 21 )
+<12:47:09 21 Oct 2014>
+$$ @vis= VisuVersion VisuUid VisuCreator VisuCreatorVersion VisuCreationDate
+##$VisuCoreFrameCount=12
+##$VisuCoreDim=1
+##$VisuCoreSize=( 1 )
+256
+##$VisuCoreDimDesc=( 1 )
+spectroscopic
+$$ @vis= VisuInstance VisuCoreFrameCount VisuCoreDim VisuCoreSize
+##$VisuCoreExtent=( 1 )
+13.3395903731375
+##$VisuCoreUnits=( 1, 65 )
+<ppm>
+##$VisuCoreDataMin=( 12 )
+0 0 0 0 0 0 0 0 0 0 0 0
+##$VisuCoreDataMax=( 12 )
+30364 30741 30552 31217 31125 31782 31684 32767 32687 32613 29990 30029
+$$ @vis= VisuCoreDimDesc VisuCoreExtent VisuCoreUnits VisuCoreDataMin
+##$VisuCoreDataOffs=( 12 )
+0 0 0 0 0 0 0 0 0 0 0 0
+##$VisuCoreDataSlope=( 12 )
+113.48695283811 113.48695283811 113.48695283811 113.48695283811 
+113.48695283811 113.48695283811 113.48695283811 113.48695283811 
+113.48695283811 113.48695283811 113.48695283811 113.48695283811
+##$VisuCoreFrameType=MAGNITUDE_IMAGE
+$$ @vis= VisuCoreDataMax VisuCoreDataOffs VisuCoreDataSlope VisuCoreFrameType
+##$VisuCoreWordType=_16BIT_SGN_INT
+##$VisuCoreByteOrder=littleEndian
+##$VisuFGOrderDescDim=1
+$$ @vis= VisuCore VisuCoreWordType VisuCoreByteOrder VisuPixel
+##$VisuFGOrderDesc=( 1 )
+(12, <FG_CYCLE>, <>, 0, 0)
+##$VisuSubjectName=( 65 )
+<RMD286>
+##$VisuSubjectId=( 65 )
+<RMD286>
+$$ @vis= VisuFGOrderDescDim VisuFGOrderDesc VisuFrameOrderDesc VisuSubjectName
+##$VisuSubjectBirthDate=( 9 )
+<>
+##$VisuSubjectSex=FEMALE
+##$VisuSubjectComment=( 2048 )
+<>
+$$ @vis= VisuSubjectId VisuSubjectBirthDate VisuSubjectSex VisuSubjectComment
+##$VisuStudyUid=( 65 )
+<2.16.756.5.5.100.278412266.14755.1413908256.111>
+##$VisuStudyDate=( 21 )
+<13:17:36 21 Oct 2014>
+##$VisuStudyId=( 65 )
+<RMD286>
+##$VisuStudyNumber=1
+##$VisuSubjectWeight=5
+$$ @vis= VisuSubject VisuStudyUid VisuStudyDate VisuStudyId VisuStudyNumber
+##$VisuStudyReferringPhysician=( 65 )
+<>
+##$VisuStudyDescription=( 65 )
+<>
+$$ @vis= VisuSubjectWeight VisuStudyReferringPhysician VisuStudyDescription
+##$VisuSeriesNumber=655361
+##$VisuSubjectPosition=Head_Supine
+##$VisuSeriesTypeId=( 65 )
+<ACQ_USER_PVM>
+$$ @vis= VisuStudy VisuSeriesNumber VisuSubjectPosition VisuSeriesTypeId
+##$VisuAcqSoftwareVersion=( 65 )
+<5.1>
+##$VisuInstitution=( 65 )
+<Duke University Biospec 70/20>
+##$VisuStation=( 65 )
+<spect>
+$$ @vis= VisuSeries VisuAcqSoftwareVersion VisuInstitution VisuStation
+##$VisuAcqDate=( 21 )
+<12:47:09 21 Oct 2014>
+##$VisuAcqEchoTrainLength=1
+##$VisuAcqSequenceName=( 40 )
+<rMD_CPMG (pvm)>
+##$VisuAcqNumberOfAverages=2
+$$ @vis= VisuEquipment VisuAcqDate VisuAcqEchoTrainLength VisuAcqSequenceName
+##$VisuAcqImagingFrequency=300.339826362144
+##$VisuAcqImagedNucleus=( 8 )
+<1H>
+##$VisuAcqRepetitionTime=( 1 )
+1500
+$$ @vis= VisuAcqNumberOfAverages VisuAcqImagingFrequency VisuAcqImagedNucleus
+##$VisuAcqFlipAngle=90
+##$VisuAcqEchoTime=( 1 )
+365.618
+##$VisuAcquisitionProtocol=( 65 )
+<RMD_CPMG>
+$$ @vis= VisuAcqRepetitionTime VisuAcqFlipAngle VisuAcqEchoTime
+##$VisuAcqScanTime=36000
+$$ @vis= VisuAcquisitionProtocol VisuAcqScanTime VisuAcquisition Visu
+##END=
